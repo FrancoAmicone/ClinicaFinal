@@ -1,0 +1,11 @@
+<mat-toolbar class="header">
+    <mat-icon matTooltip="Tipo de usuario: {{ rol }}" class="info-icon">info</mat-icon>
+    <span class="username">{{ usuario }}</span>
+
+    <div>
+    <mat-icon matTooltip="Estas por cerrar tu sesion {{ usuario }}" class="exit-icon">logout</mat-icon>
+    <button mat-button (click)="logout()" class="cerrar-sesion">Cerrar sesión</button>
+    </div>
+    
+    <button mat-button (click)="home()" class="home">Clinica Medica©</button>
+</mat-toolbar>

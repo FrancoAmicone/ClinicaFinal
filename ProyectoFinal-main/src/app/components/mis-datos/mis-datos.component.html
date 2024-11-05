@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<body>
+
+    
+      <div class="form-wrapper">            
+            
+            <!-- registro -->
+            <form class="form-container"  [formGroup]="usuarioForm">
+                <div class="row">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput formControlName="nombre" autocomplete="given-name">
+                </mat-form-field>
+              </div>
+                
+              <div class="row">
+                
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Apellido</mat-label>
+                  <input matInput formControlName="apellido" autocomplete="family-name">
+                </mat-form-field>
+              </div>
+              
+              <div class="row">
+                <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>DNI</mat-label>
+                  <input matInput formControlName="dni" autocomplete="off">
+                </mat-form-field>
+              </div>
+              
+              
+              
+              
+              <div class="row">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Correo</mat-label>
+                <input matInput formControlName="correo">
+              </mat-form-field>
+            </div>
+
+              <div class="row">
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="telefono" autocomplete="tel">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" formControlName="contrasenia" autocomplete="new-password">
+              </mat-form-field>
+            </div>
+            <div class="botones">
+              <button mat-button (click)="volver()" *ngIf="!editing">Volver</button>
+              <button mat-button (click)="editar()" *ngIf="!editing">Editar</button>
+              <button mat-button (click)="cancelar()" *ngIf="editing">Cancelar</button>
+              <button mat-button (click)="guardar()" *ngIf="editing">Guardar</button>
+            </div>
+                
+              </form>
+            </div>
+
+
+
+
+
+          </body>
+          <app-footer></app-footer>

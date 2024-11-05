@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 20px; 
+  font-size: 14px; 
+  color: #333; 
+  bottom: 0px;
+  position: relative;
+  text-align: center;
+  width: 100%; 
+  background-color: rgb(255, 245, 225); 
+  z-index: 1;
+}
+
+.footer-item {
+  margin: 0 20px; 
+}
+
+.footer-content {
+  display: flex; 
+  align-items: center; 
+}
+
+.footer-content a {
+  color: #07ad39; 
+  text-decoration: none;
+  font-size: 20px; 
+  margin: 0 15px; 
+}
+
+.footer-content a:hover {
+  text-decoration: underline; 
+  color: #018f2c;
+}

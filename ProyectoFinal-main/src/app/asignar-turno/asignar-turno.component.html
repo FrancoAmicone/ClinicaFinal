@@ -1,0 +1,69 @@
+<h2 mat-dialog-title>Asignar Turno</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="turnoForm">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Especialidad</mat-label>
+      <mat-select formControlName="especialidad" (selectionChange)="onEspecialidadChange()">
+        <mat-option *ngFor="let esp of especialidades" [value]="esp.id">
+          {{esp.descripcion}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Médico</mat-label>
+      <mat-select formControlName="medico" (selectionChange)="onMedicoChange()">
+        <mat-option *ngFor="let med of medicos" [value]="med.id">
+          {{med.nombre}} {{med.apellido}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Paciente</mat-label>
+      <mat-select formControlName="paciente">
+        <mat-option *ngFor="let pac of pacientes" [value]="pac.id">
+          {{pac.nombre}} {{pac.apellido}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fecha" (dateChange)="onFechaChange()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Hora</mat-label>
+      <mat-select formControlName="hora">
+        <mat-option *ngFor="let horario of horariosDisponibles" [value]="horario.hora" [disabled]="!horario.disponible">
+          {{horario.hora}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Cobertura</mat-label>
+      <mat-select formControlName="cobertura">
+        <mat-option *ngFor="let cob of coberturas" [value]="cob.id">
+          {{cob.nombre}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Nota</mat-label>
+      <textarea matInput formControlName="nota"></textarea>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-button (click)="onCancel()">Cancelar</button>
+      <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!turnoForm.valid">
+        Guardar
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>
